@@ -30,9 +30,9 @@ static void init()
 
   cam.projection = matrice_projection(60.0f*M_PI/180.0f,1.0f,0.01f,100.0f);
   cam.tr.translation = vec3(0.0f, 1.0f, 0.0f);
-  // cam.tr.translation = vec3(0.0f, 20.0f, 0.0f);
-  // cam.tr.rotation_center = vec3(0.0f, 20.0f, 0.0f);
-  // cam.tr.rotation_euler = vec3(M_PI/2., 0.0f, 0.0f);
+  cam.tr.translation = vec3(0.0f, 20.0f, 0.0f);
+  cam.tr.rotation_center = vec3(0.0f, 20.0f, 0.0f);
+  cam.tr.rotation_euler = vec3(M_PI/2., 0.0f, 0.0f);
 
   init_model_1();
   init_model_2();

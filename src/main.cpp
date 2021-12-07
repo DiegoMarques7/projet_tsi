@@ -30,9 +30,9 @@ static void init()
 
   cam.projection = matrice_projection(60.0f*M_PI/180.0f,1.0f,0.01f,100.0f);
   cam.tr.translation = vec3(0.0f, 1.0f, 0.0f);
-  cam.tr.translation = vec3(0.0f, 20.0f, 0.0f);
-  cam.tr.rotation_center = vec3(0.0f, 20.0f, 0.0f);
-  cam.tr.rotation_euler = vec3(M_PI/2., 0.0f, 0.0f);
+  //cam.tr.translation = vec3(0.0f, 20.0f, 0.0f);
+  //cam.tr.rotation_center = vec3(0.0f, 20.0f, 0.0f);
+  //cam.tr.rotation_euler = vec3(M_PI/2., 0.0f, 0.0f);
 
   init_model_1();
   init_model_2();
@@ -350,7 +350,7 @@ void init_model_2()
   obj[1].nb_triangle = 2;
   obj[1].vao = upload_mesh_to_gpu(m);
 
-  obj[1].texture_id = glhelper::load_texture("data/grass.tga");
+  obj[1].texture_id = glhelper::load_texture("data/parc.tga");
 
   obj[1].visible = true;
   obj[1].prog = shader_program_id;

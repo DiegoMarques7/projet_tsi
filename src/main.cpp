@@ -89,8 +89,9 @@ static void keyboard_callback(unsigned char key, int, int)
 /*****************************************************************************\
 * special_callback                                                            *
 \*****************************************************************************/
-static void special_callback(int key, int, int)
+static void special_callback(int key, int,int)
 {
+//to do programme_11
 }
 
 
@@ -360,10 +361,10 @@ void init_model_2()
 void init_model_3()
 {
   // Chargement d'un maillage a partir d'un fichier
-  mesh m = load_obj_file("data/stegosaurus.obj");
+  mesh m = load_obj_file("data/cube.obj");
 
   //Affecte une transformation sur les sommets du maillage
-  float s = 1.0f;
+  float s = 1.1f;
   mat4 transform = mat4(   s, 0.0f, 0.0f, 0.0f,
       0.0f,    s, 0.0f, 0.50f,
       0.0f, 0.0f,   s , 0.0f,

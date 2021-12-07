@@ -35,7 +35,7 @@ static void init()
   //cam.tr.rotation_euler = vec3(M_PI/2., 0.0f, 0.0f);
 
   init_model_1();
-  init_model_2();
+  //init_model_2();
   init_model_3();
 
   gui_program_id = glhelper::create_program_from_file("shaders/gui.vert", "shaders/gui.frag"); CHECK_GL_ERROR();
@@ -283,7 +283,7 @@ void init_model_1()
   mesh m = load_obj_file("data/stegosaurus.obj");
 
   // Affecte une transformation sur les sommets du maillage
-  float s = 0.2f;
+  float s = 1.2f;
   mat4 transform = mat4(   s, 0.0f, 0.0f, 0.0f,
       0.0f,    s, 0.0f, 0.0f,
       0.0f, 0.0f,   s , 0.0f,
@@ -299,7 +299,7 @@ void init_model_1()
   obj[0].vao = upload_mesh_to_gpu(m);
 
   obj[0].nb_triangle = m.connectivity.size();
-  obj[0].texture_id = glhelper::load_texture("data/stegosaurus.tga");
+  obj[0].texture_id = glhelper::load_texture("data/nathan.tga");
   obj[0].visible = true;
   obj[0].prog = shader_program_id;
 
@@ -360,20 +360,20 @@ void init_model_2()
 void init_model_3()
 {
   // Chargement d'un maillage a partir d'un fichier
-  mesh m = load_obj_file("data/cube.obj");
+  mesh m = load_obj_file("data/stegosaurus.obj");
 
-  // Affecte une transformation sur les sommets du maillage
-  //float s = 1.0f;
-  //mat4 transform = mat4(   s, 0.0f, 0.0f, 0.0f,
-  //    0.0f,    s, 0.0f, 0.50f,
-  //    0.0f, 0.0f,   s , 0.0f,
-  //    0.0f, 0.0f, 0.0f, 1.0f);
-  //apply_deformation(&m,matrice_rotation(M_PI/2.0f,1.0f,0.0f,0.0f));
-  //apply_deformation(&m,matrice_rotation(M_PI,0.0f,1.0f,0.0f));
-  //apply_deformation(&m,transform);
+  //Affecte une transformation sur les sommets du maillage
+  float s = 1.0f;
+  mat4 transform = mat4(   s, 0.0f, 0.0f, 0.0f,
+      0.0f,    s, 0.0f, 0.50f,
+      0.0f, 0.0f,   s , 0.0f,
+      0.0f, 0.0f, 0.0f, 1.0f);
+  apply_deformation(&m,matrice_rotation(M_PI/2.0f,1.0f,0.0f,0.0f));
+  apply_deformation(&m,matrice_rotation(M_PI,0.0f,1.0f,0.0f));
+  apply_deformation(&m,transform);
 
-  //update_normals(&m);
-  //fill_color(&m,vec3(1.0f,1.0f,1.0f));
+  update_normals(&m);
+  fill_color(&m,vec3(1.0f,1.0f,1.0f));
 
   obj[2].vao = upload_mesh_to_gpu(m);
 

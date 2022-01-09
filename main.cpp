@@ -198,7 +198,7 @@ static void compteur(int)
 }
 
 void collision(){
-int NumeroDinosaure[4]={1,3,4,5};
+int NumeroDinosaure[4]={0,3,4,5};
 for (int i=0; i<4; i++){
  if (abs(obj[2].tr.translation.x -obj[NumeroDinosaure[i]].tr.translation.x)<5 && (abs(obj[2].tr.translation.z -obj[NumeroDinosaure[i]].tr.translation.z)<2) ){
   obj[1].texture_id = glhelper::load_texture("data/natani.tga");
